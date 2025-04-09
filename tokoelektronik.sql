@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 13, 2024 at 10:53 PM
+-- Generation Time: Apr 09, 2025 at 05:27 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `beton`
+-- Database: `tokoelektronik`
 --
 
 -- --------------------------------------------------------
@@ -42,18 +42,16 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`id_barang`, `nama_barang`, `id_kategori`, `harga`, `deskripsi`, `gambar`, `berat`) VALUES
-(10, 'B0', 1, 665000, 'Mutu B0', 'scs1.png', 0),
-(11, 'K 100', 1, 680000, 'mutu K100 dengan Slum 10±2', 'scs.png', 0),
-(12, 'Slum per M3', 2, 25000, 'Penambahan Slump Rp 25.000 / M3\r\n', 'slum.png', 0),
-(13, 'Minimix per M3', 2, 100000, 'Pengecoran dengan Minimix Harga tambah Rp. 100.000,-/m3', 'minimix.png', 0),
-(14, 'K 125', 1, 695000, 'Slum 10+2', 'scs2.png', 0),
-(15, 'K 150', 1, 710000, '-', 'scs4.png', 0),
-(16, 'K 175', 1, 725000, '-', 'scs6.png', 0),
-(17, 'K 200 / FC 15', 1, 740000, '-', 'scs7.png', 0),
-(18, 'K 225', 1, 755000, '-', 'scs8.png', 0),
-(19, 'K 250 / FC 20', 1, 770000, '-', 'scs9.png', 0),
-(20, 'K 275', 1, 790000, '-', 'scs10.png', 0),
-(21, 'K 300 / FC 25', 1, 810000, '-', 'scs11.png', 0);
+(5, 'Vacuum Cleaner Electrolux EC41-6DB', 2, 1450000, 'Vacuum cleaner tanpa kantong dengan daya 1600W, cocok untuk rumah tangga.', 'images.jpg', 4500),
+(4, 'Mesin Cuci LG T2109VS2M', 2, 3100000, 'Mesin cuci bukaan atas dengan kapasitas 9 kg dan fitur Smart Motion.', '2b81a2bce5723bbe583b79bbbaa62b7b_jpg_720x720q80.jpg', 33000),
+(3, 'Microwave Sharp R-21D0', 1, 950000, 'Microwave 20L dengan kontrol mekanik dan daya 700W.', '259629_81cd58dc-6957-4b93-96e9-3feda30fc6d1_700_700.jpg', 12000),
+(2, 'Blender Miyako BL-102PL', 1, 275000, 'Blender dengan dua tabung plastik, cocok untuk keperluan dapur rumahan.', 'e81b14f9-8322-49dc-9c6a-5fa53c751393.jpg', 1800),
+(1, 'Rice Cooker Philips HD3128', 1, 550000, 'Rice cooker kapasitas 1.8L dengan lapisan anti lengket dan daya 400W.', '265-3515-9nd5.jpg', 2500),
+(6, 'Setrika Uap Philips GC5039', 2, 1299000, 'Setrika uap 3000W dengan kemampuan menyetrika vertikal dan fitur anti lengket.', 'PHILIPS-GC5030-Series-GC5039-Azur-Elite-Steam-Iron.jpg', 3200),
+(7, 'Smart TV Samsung 43 inch UHD', 3, 4300000, 'TV pintar beresolusi 4K UHD dengan sistem operasi Tizen dan HDR.', 'smart-tv-samsung-crystal-uhd-4k-43-inch-ua43cu7000-1.png', 10000),
+(8, 'Speaker Bluetooth Polytron PMA 9502', 3, 875000, 'Speaker Bluetooth dengan daya 50W dan port USB, cocok untuk hiburan rumah.', '2458366_2203c3fd-b9f5-4ad0-ab2a-b38b6cf442fa_622_622.jpg', 3500),
+(9, 'Home Theater LG LHD657', 3, 2650000, 'Sistem home theater 5.1 channel dengan daya total 1000W dan DVD player.', 'images.png', 12500),
+(10, 'Set Top Box Matrix Apple', 3, 275000, 'Perangkat set top box DVB-T2 untuk menangkap siaran TV digital.', 'Scc8de0061c6d4b0f9378a3bb431b1807e_jpg_720x720q80.jpg', 900);
 
 -- --------------------------------------------------------
 
@@ -67,16 +65,6 @@ CREATE TABLE `tbl_gambar` (
   `ket` varchar(255) DEFAULT NULL,
   `gambar` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
-
---
--- Dumping data for table `tbl_gambar`
---
-
-INSERT INTO `tbl_gambar` (`id_gambar`, `id_barang`, `ket`, `gambar`) VALUES
-(27, 8, 'Uniforms', 'logouniforms.jpeg'),
-(26, 8, 'Mantap nggih', 'untadlogo.png'),
-(29, 9, 'pak luhut', 'opung.jpeg'),
-(30, 9, 'ertertrtrt', 'software_kaos.PNG');
 
 -- --------------------------------------------------------
 
@@ -94,8 +82,9 @@ CREATE TABLE `tbl_kategori` (
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'Mutu'),
-(2, 'Tambahan');
+(1, 'Peralatan Dapur'),
+(2, 'Peralatan Kebersihan'),
+(3, 'Peralatan Hiburan');
 
 -- --------------------------------------------------------
 
@@ -116,10 +105,6 @@ CREATE TABLE `tbl_pelanggan` (
 --
 
 INSERT INTO `tbl_pelanggan` (`id_pelanggan`, `nama_pelanggan`, `email`, `password`, `foto`) VALUES
-(1, 'sianjay', 'sianjay@gmail.com', '1234', NULL),
-(2, 'Maman', 'maman@gmail.com', '1234', NULL),
-(4, 'Gideon', 'gideon@gmail.com', '12345', NULL),
-(5, 'tester', 'tester@gmail.com', 'password', NULL),
 (7, 'ikhsan', 'ikhsan@gmail.com', '12345', NULL),
 (9, 'Naufal', 'mhnaufal2000@gmail.com', 'naufal', NULL);
 
@@ -141,7 +126,8 @@ CREATE TABLE `tbl_rekening` (
 --
 
 INSERT INTO `tbl_rekening` (`id_rekening`, `nama_bank`, `no_rek`, `atas_nama`) VALUES
-(1, 'BRI', '5434-4382-3434-4345', 'MOH. AGUNG NURSALIM');
+(1, 'BRI', '5434-4382-3434-4345', 'MOH. AGUNG NURSALIM'),
+(3, 'BSI', '456546456456456', 'Sandin');
 
 -- --------------------------------------------------------
 
@@ -156,6 +142,16 @@ CREATE TABLE `tbl_rinci_transaksi` (
   `qty` int DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
+--
+-- Dumping data for table `tbl_rinci_transaksi`
+--
+
+INSERT INTO `tbl_rinci_transaksi` (`id_rinci`, `no_order`, `id_barang`, `qty`) VALUES
+(70, '20250409YCIZO5R2', 1, 1),
+(69, '20250409YCIZO5R2', 5, 1),
+(68, '20250409YCIZO5R2', 6, 1),
+(67, '20250409YCIZO5R2', 10, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -166,7 +162,8 @@ CREATE TABLE `tbl_setting` (
   `id` int NOT NULL,
   `nama_toko` varchar(255) DEFAULT NULL,
   `lokasi` int DEFAULT NULL,
-  `alamat_toko` text,
+  `provinsi` varchar(100) NOT NULL,
+  `alamat_toko` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `no_telpon` varchar(15) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
@@ -174,8 +171,8 @@ CREATE TABLE `tbl_setting` (
 -- Dumping data for table `tbl_setting`
 --
 
-INSERT INTO `tbl_setting` (`id`, `nama_toko`, `lokasi`, `alamat_toko`, `no_telpon`) VALUES
-(1, 'SENDANG MULYA', 419, 'Sleman', '085156815391');
+INSERT INTO `tbl_setting` (`id`, `nama_toko`, `lokasi`, `provinsi`, `alamat_toko`, `no_telpon`) VALUES
+(1, 'SENDANG MULYA', 433, 'Jawa Tengah', 'Jl. Tentara Pelajar, Gadingan, Jombor, Kec. Bendosari, Kabupaten Sukoharjo, Jawa Tengah ', '085156815391');
 
 -- --------------------------------------------------------
 
@@ -198,7 +195,6 @@ CREATE TABLE `tbl_transaksi` (
   `paket` varchar(255) DEFAULT NULL,
   `estimasi` varchar(255) DEFAULT NULL,
   `ongkir` int DEFAULT NULL,
-  `jarak` varchar(255) DEFAULT NULL,
   `grand_total` int DEFAULT NULL,
   `total_bayar` int DEFAULT NULL,
   `status_bayar` int DEFAULT NULL,
@@ -209,6 +205,13 @@ CREATE TABLE `tbl_transaksi` (
   `status_order` int DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+--
+-- Dumping data for table `tbl_transaksi`
+--
+
+INSERT INTO `tbl_transaksi` (`id_transaksi`, `id_pelanggan`, `no_order`, `tgl_order`, `nama_penerima`, `hp_penerima`, `provinsi`, `kota`, `alamat`, `kode_pos`, `expedisi`, `paket`, `estimasi`, `ongkir`, `grand_total`, `total_bayar`, `status_bayar`, `bukti_bayar`, `atas_nama`, `nama_bank`, `no_rek`, `status_order`, `keterangan`) VALUES
+(51, '12', '20250409YCIZO5R2', '2025-04-09', 'sandin', '08464564464', 'Jawa Tengah', 'Surakarta (Solo)', 'solo jateng', '57555', 'jne', 'YES', '1-1 Hari', 143000, 3574000, 3717000, 1, 'bukti-20250409-6d7d3d2cac.jpg', 'sandin', 'BSI', '4564545645', 3, '12312312');
 
 -- --------------------------------------------------------
 
@@ -315,25 +318,25 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT for table `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
-  MODIFY `id_pelanggan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pelanggan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_rekening`
 --
 ALTER TABLE `tbl_rekening`
-  MODIFY `id_rekening` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rekening` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_rinci_transaksi`
 --
 ALTER TABLE `tbl_rinci_transaksi`
-  MODIFY `id_rinci` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_rinci` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `tbl_transaksi`
 --
 ALTER TABLE `tbl_transaksi`
-  MODIFY `id_transaksi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_transaksi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
