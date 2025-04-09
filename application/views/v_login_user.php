@@ -18,17 +18,70 @@
 	<link rel="stylesheet" href="<?= base_url() ?>template/dist/css/adminlte.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+	<style>
+		body {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			height: 100vh;
+		}
+
+		.login-box {
+			margin-top: 5%;
+			max-width: 400px;
+		}
+
+		.card {
+			border-radius: 15px;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+			border: none;
+		}
+
+		.login-card-body {
+			padding: 2.5rem;
+			border-radius: 15px;
+		}
+
+		.login-logo {
+			margin-bottom: 1.5rem;
+		}
+
+		.login-logo b {
+			color: white;
+			font-size: 2rem;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		.input-group {
+			margin-bottom: 1.5rem !important;
+		}
+
+		.form-control {
+			border-radius: 8px;
+			padding: 12px;
+			height: auto;
+		}
+
+		.input-group-text {
+			border-radius: 8px;
+			background-color: #f8f9fa;
+		}
+
+		.btn {
+			padding: 12px;
+			border-radius: 8px;
+			font-weight: 600;
+		}
+	</style>
 </head>
 
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<P href="<?= base_url() ?>"><b>Admin</b></P>
+			<b class="text-dark">Admin Panel</b>
 		</div>
 		<!-- /.login-logo -->
 		<div class="card">
 			<div class="card-body login-card-body">
-				<p class="login-box-msg">Silahkan Login</p>
+				<h4 class="text-center mb-4">Sign In</h4>
 
 				<?php
 
@@ -54,15 +107,15 @@
 
 				echo form_open('auth/login_user')
 					?>
-				<div class="input-group mb-3">
+				<div class="input-group">
 					<input type="text" name="username" class="form-control" placeholder="Username">
 					<div class="input-group-append">
 						<div class="input-group-text">
-							<span class="fas fa-envelope"></span>
+							<span class="fas fa-user"></span>
 						</div>
 					</div>
 				</div>
-				<div class="input-group mb-3">
+				<div class="input-group">
 					<input type="password" name="password" class="form-control" placeholder="Password">
 					<div class="input-group-append">
 						<div class="input-group-text">
@@ -72,11 +125,11 @@
 				</div>
 				<div class="row">
 					<div class="col-6">
-						<a href="<?= base_url() ?>" class="btn btn-success btn-block"> Website</a>
+						<a href="<?= base_url() ?>" class="btn btn-outline-secondary btn-block">Website</a>
 					</div>
 					<!-- /.col -->
 					<div class="col-6">
-						<button type="submit" class="btn btn-primary btn-block">Log In</button>
+						<button type="submit" class="btn btn-primary btn-block">Login</button>
 					</div>
 					<!-- /.col -->
 				</div>
