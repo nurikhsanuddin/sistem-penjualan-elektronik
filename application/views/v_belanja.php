@@ -21,7 +21,7 @@
 
 					<tr>
 						<th width="100px">QTY</th>
-						<th>Nama mutu</th>
+						<th>Nama Barang</th>
 						<th style="text-align:right">Harga</th>
 						<th style="text-align:right">Sub-Total</th>
 						<th style="text-align:center">Berat</th>

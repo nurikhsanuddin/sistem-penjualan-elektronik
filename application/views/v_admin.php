@@ -9,7 +9,8 @@
 		<div class="icon">
 			<i class="ion ion-bag"></i>
 		</div>
-		<a href="<?= base_url('admin/pesanan_masuk')  ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('admin/pesanan_masuk') ?>" class="small-box-footer">More info <i
+				class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>
 
@@ -19,12 +20,13 @@
 		<div class="inner">
 			<h3><?= $total_barang ?></h3>
 
-			<p>Total mutu</p>
+			<p>Total Barang</p>
 		</div>
 		<div class="icon">
 			<i class="fas  fa-birthday-cake"></i>
 		</div>
-		<a href="<?= base_url('barang') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('barang') ?>" class="small-box-footer">More info <i
+				class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>
 
@@ -36,7 +38,8 @@
 
 			<p>Pelanggan</p>
 		</div>
-		<a href="<?= base_url('pelanggan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('pelanggan') ?>" class="small-box-footer">More info <i
+				class="fas fa-arrow-circle-right"></i></a>
 		<div class="icon">
 			<i class="fas fa-users"></i>
 		</div>
@@ -55,6 +58,7 @@
 		<div class="icon">
 			<i class="fas fa-list"></i>
 		</div>
-		<a href="<?= base_url('kategori') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('kategori') ?>" class="small-box-footer">More info <i
+				class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>

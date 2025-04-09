@@ -23,7 +23,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<P href="<?= base_url() ?>"><b>Admin</b> SCS</P>
+			<P href="<?= base_url() ?>"><b>Admin</b></P>
 		</div>
 		<!-- /.login-logo -->
 		<div class="card">
@@ -53,7 +53,7 @@
 				}
 
 				echo form_open('auth/login_user')
-				?>
+					?>
 				<div class="input-group mb-3">
 					<input type="text" name="username" class="form-control" placeholder="Username">
 					<div class="input-group-append">

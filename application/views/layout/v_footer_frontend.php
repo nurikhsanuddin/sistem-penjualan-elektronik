@@ -11,7 +11,7 @@
 	<!-- To the right -->
 
 	<!-- Default to the left -->
-	<strong>Copyright &copy; 2022 <a href="">SCS</a>.</strong> All rights reserved.
+	<!-- <strong>Copyright &copy; 2022 <a href="">SCS</a>.</strong> All rights reserved. -->
 </footer>
 </div>
 <!-- ./wrapper -->
@@ -19,8 +19,8 @@
 <!-- REQUIRED SCRIPTS -->
 
 <script>
-	window.setTimeout(function() {
-		$(".alert").fadeTo(500, 0).slideUp(500, function() {
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
 			$(this).remove();
 		});
 	}, 3000)

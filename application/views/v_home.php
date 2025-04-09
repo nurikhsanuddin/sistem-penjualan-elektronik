@@ -15,17 +15,17 @@
 			<div class="carousel-item active">
 				<img class="d-block w-100" src="<?= base_url() ?>assets/slider/slider1.png">
 				<div class="carousel-caption d-none d-md-block">
-					<h2 class="display-4 font-weight-bold">PT. Surya Cakra Sakti</h2>
-					<p class="lead">Solusi terpercaya untuk kebutuhan beton berkualitas tinggi</p>
+					<h2 class="display-4 font-weight-bold">SENDANG MULYA</h2>
+					<p class="lead">Solusi lengkap untuk kebutuhan elektronik rumah tangga Anda</p>
 					<a href="#products" class="btn btn-primary btn-lg modern-btn">Lihat Produk</a>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100" src="<?= base_url() ?>assets/slider/slider2.png">
 				<div class="carousel-caption d-none d-md-block">
-					<h2 class="display-4 font-weight-bold">Kualitas Terjamin</h2>
-					<p class="lead">Dengan standar kualitas tinggi untuk setiap produk</p>
-					<a href="#products" class="btn btn-primary btn-lg modern-btn">Pesan Sekarang</a>
+					<h2 class="display-4 font-weight-bold">Produk Berkualitas</h2>
+					<p class="lead">Berbagai pilihan elektronik dengan garansi resmi</p>
+					<a href="#products" class="btn btn-primary btn-lg modern-btn">Belanja Sekarang</a>
 				</div>
 			</div>
 		</div>
@@ -45,19 +45,19 @@
 	<div class="col-md-4 mb-3">
 		<div class="modern-card p-4 text-center h-100">
 			<div class="feature-icon mb-3">
-				<i class="fas fa-truck fa-3x text-primary"></i>
+				<i class="fas fa-shield-alt fa-3x text-primary"></i>
 			</div>
-			<h4>Pengiriman Cepat</h4>
-			<p class="text-muted">Pengiriman tepat waktu ke lokasi proyek Anda</p>
+			<h4>Garansi Resmi</h4>
+			<p class="text-muted">Produk bergaransi resmi dan terpercaya</p>
 		</div>
 	</div>
 	<div class="col-md-4 mb-3">
 		<div class="modern-card p-4 text-center h-100">
 			<div class="feature-icon mb-3">
-				<i class="fas fa-medal fa-3x text-primary"></i>
+				<i class="fas fa-truck fa-3x text-primary"></i>
 			</div>
-			<h4>Kualitas Terjamin</h4>
-			<p class="text-muted">Beton dengan standar kualitas tinggi</p>
+			<h4>Pengiriman Cepat</h4>
+			<p class="text-muted">Layanan pengiriman ke seluruh Indonesia</p>
 		</div>
 	</div>
 	<div class="col-md-4 mb-3">
@@ -65,8 +65,8 @@
 			<div class="feature-icon mb-3">
 				<i class="fas fa-headset fa-3x text-primary"></i>
 			</div>
-			<h4>Dukungan Pelanggan</h4>
-			<p class="text-muted">Layanan pelanggan 24/7 untuk kebutuhan Anda</p>
+			<h4>Layanan 24/7</h4>
+			<p class="text-muted">Dukungan teknis dan customer service 24 jam</p>
 		</div>
 	</div>
 </div>
@@ -134,7 +134,7 @@
 						<small class="text-muted">Kontraktor</small>
 					</div>
 				</div>
-				<p class="text-muted">"Produk beton dari PT. Surya Cakra Sakti selalu memenuhi standar kualitas tinggi.
+				<p class="text-muted">"Produk beton dari SENDANG MULYA selalu memenuhi standar kualitas tinggi.
 					Pengirimannya juga tepat waktu."</p>
 				<div class="text-warning">
 					<i class="fas fa-star"></i>
@@ -170,12 +170,12 @@
 				<div class="d-flex align-items-center mb-3">
 					<i class="fas fa-quote-left fa-2x text-primary mr-3"></i>
 					<div>
-						<h5 class="mb-0">Dewi Lestari</h5>
-						<small class="text-muted">Arsitek</small>
+						<h5 class="mb-0">Rina Wijaya</h5>
+						<small class="text-muted">Ibu Rumah Tangga</small>
 					</div>
 				</div>
-				<p class="text-muted">"Sebagai arsitek, saya membutuhkan material berkualitas tinggi. SCS selalu menjadi
-					pilihan utama untuk proyek-proyek saya."</p>
+				<p class="text-muted">"Produk elektronik dari SENDANG MULYA sangat membantu pekerjaan rumah tangga saya.
+					Kualitas terjamin dan pelayanan memuaskan."</p>
 				<div class="text-warning">
 					<i class="fas fa-star"></i>
 					<i class="fas fa-star"></i>

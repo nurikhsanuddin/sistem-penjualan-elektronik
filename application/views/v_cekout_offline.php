@@ -23,7 +23,7 @@
 					<tr>
 						<th>Qty</th>
 						<th width="150px" class="text-center">Harga</th>
-						<th>mutu</th>
+						<th>Barang</th>
 						<th class="text-center">Total Harga</th>
 						<!-- <th class="text-center">Berat</th> -->
 					</tr>
@@ -37,13 +37,13 @@
 						$berat = $items['qty'] * $barang->berat;
 
 						$tot_berat = $tot_berat + $berat;
-					?>
+						?>
 						<tr>
 							<td><?php echo $items['qty']; ?></td>
 							<td class="text-center">Rp. <?php echo number_format($items['price'], 0); ?></td>
 							<td><?php echo $items['name']; ?></td>
-							<td class="text-center">Rp. <?php echo  number_format($items['subtotal'], 0); ?></td>
-							<!-- <td class="text-center"><?= $berat  ?> Gr</td> -->
+							<td class="text-center">Rp. <?php echo number_format($items['subtotal'], 0); ?></td>
+							<!-- <td class="text-center"><?= $berat ?> Gr</td> -->
 						</tr>
 					<?php } ?>
 
@@ -163,7 +163,8 @@
 	<!-- end Simpan Rinci Transaksi -->
 	<div class="row no-print">
 		<div class="col-12">
-			<a href="<?= base_url('offline')  ?>" class="btn btn-warning"><i class="fas fa-backward"></i> Kembali Ke Keranjang</a>
+			<a href="<?= base_url('offline') ?>" class="btn btn-warning"><i class="fas fa-backward"></i> Kembali Ke
+				Keranjang</a>
 			<button type="submit" class="btn btn-primary float-right" style="margin-right: 5px;">
 				<i class="fas fa-shopping-cart"></i> Proses Cekout
 			</button>
@@ -176,9 +177,9 @@
 
 
 <script>
-	$(document).ready(function() {
+	$(document).ready(function () {
 		// When the distance selection changes
-		$("select[name=jarak]").on("change", function() {
+		$("select[name=jarak]").on("change", function () {
 			var distance = $(this).val();
 			var shippingCost = 0;
 
@@ -214,19 +215,19 @@
 		$.ajax({
 			type: "POST",
 			url: "<?= base_url('rajaongkir/provinsi') ?>",
-			success: function(hasil_provinsi) {
+			success: function (hasil_provinsi) {
 				$("select[name=provinsi]").html(hasil_provinsi);
 			}
 		});
 
 		// Fetch city data on province selection
-		$("select[name=provinsi]").on("change", function() {
+		$("select[name=provinsi]").on("change", function () {
 			var id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
 			$.ajax({
 				type: "POST",
 				url: "<?= base_url('rajaongkir/kota') ?>",
 				data: 'id_provinsi=' + id_provinsi_terpilih,
-				success: function(hasil_kota) {
+				success: function (hasil_kota) {
 					$("select[name=kota]").html(hasil_kota);
 				}
 			});

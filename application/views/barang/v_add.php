@@ -2,7 +2,7 @@
 	<!-- general form elements disabled -->
 	<div class="card card-primary">
 		<div class="card-header">
-			<h3 class="card-title">Form Add Mutu</h3>
+			<h3 class="card-title">Form Add Barang</h3>
 		</div>
 		<!-- /.card-header -->
 		<div class="card-body">
@@ -21,7 +21,8 @@
 			echo form_open_multipart('barang/add') ?>
 			<div class="form-group">
 				<label>Barang</label>
-				<input name="nama_barang" class="form-control" placeholder="Barang" value="<?= set_value('nama_barang') ?>">
+				<input name="nama_barang" class="form-control" placeholder="Barang"
+					value="<?= set_value('nama_barang') ?>">
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
@@ -38,10 +39,12 @@
 				<div class="col-sm-8">
 					<div class="form-group">
 						<label>Harga</label>
-						<input name="harga" class="form-control" placeholder="Harga (200000)" value="<?= set_value('harga') ?>">
+						<input name="harga" class="form-control" placeholder="Harga (200000)"
+							value="<?= set_value('harga') ?>">
 					</div>
 				</div>
-				<input type="hidden" name="berat" min="0" class="form-control" placeholder="Berat Dalam Satuan Gram" value="0">
+				<input type="hidden" name="berat" min="0" class="form-control" placeholder="Berat Dalam Satuan Gram"
+					value="0">
 				<!-- <div class="col-sm-4">
 					<div class="form-group">
 						<label>Berat (Gr)</label>
@@ -52,7 +55,8 @@
 
 			<div class="form-group">
 				<label>Deskripsi</label>
-				<textarea name="deskripsi" class="form-control" rows="5" placeholder="Deskripsi.."><?= set_value('deskripsi') ?></textarea>
+				<textarea name="deskripsi" class="form-control" rows="5"
+					placeholder="Deskripsi.."><?= set_value('deskripsi') ?></textarea>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
@@ -85,14 +89,14 @@
 	function bacaGambar(input) {
 		if (input.files && input.files[0]) {
 			var reader = new FileReader();
-			reader.onload = function(e) {
+			reader.onload = function (e) {
 				$('#gambar_load').attr('src', e.target.result);
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
 
-	$("#preview_gambar").change(function() {
+	$("#preview_gambar").change(function () {
 		bacaGambar(this);
 	});
 </script>

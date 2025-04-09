@@ -95,19 +95,20 @@
 
 							</tr>
 							<?php foreach ($diproses as $key => $value) {
-								if ($value->jarak == "jauh") {
-									$jarak = "20-35 Km";
-								} elseif ($value->jarak == "dekat") {
-									$jarak = "0-20 Km";
-								} ?>
+								// if ($value->jarak == "jauh") {
+								// 	$jarak = "20-35 Km";
+								// } elseif ($value->jarak == "dekat") {
+								// 	$jarak = "0-20 Km";
+								// } ?>
 								<tr>
 									<td><?= $value->no_order ?></td>
 									<td><?= $value->tgl_order ?></td>
 									<td>
-										<b><?= $jarak ?></b><br>
-										Alamat : <?= $value->alamat ?><br>
+										<!-- <b><?= $jarak ?></b><br> -->
+										Alamat :
+										<?= $value->alamat ?><br>
 										Kota : <?= $value->provinsi ?>,<?= $value->kota ?>,<?= $value->kode_pos ?> <br>
-										Ekstra : <?= number_format($value->ongkir, 0) ?><br>
+										Ongkir : <?= number_format($value->ongkir, 0) ?><br>
 										Nomor HP : <?= $value->hp_penerima ?>
 									</td>
 									<td>
@@ -131,23 +132,24 @@
 								<th>Tanggal</th>
 								<th>Alamat</th>
 								<th>Total Bayar</th>
-								<th>keterangan</th>
+								<th>Resi</th>
 
 							</tr>
 							<?php foreach ($dikirim as $key => $value) {
-								if ($value->jarak == "jauh") {
-									$jarak = "20-35 Km";
-								} elseif ($value->jarak == "dekat") {
-									$jarak = "0-20 Km";
-								} ?>
+								// if ($value->jarak == "jauh") {
+								// 	$jarak = "20-35 Km";
+								// } elseif ($value->jarak == "dekat") {
+								// 	$jarak = "0-20 Km";
+								// } ?>
 								<tr>
 									<td><?= $value->no_order ?></td>
 									<td><?= $value->tgl_order ?></td>
 									<td>
-										<b><?= $jarak ?></b><br>
-										Alamat : <?= $value->alamat ?><br>
+										<!-- <b><?= $jarak ?></b><br> -->
+										Alamat :
+										<?= $value->alamat ?><br>
 										Kota : <?= $value->provinsi ?>,<?= $value->kota ?>,<?= $value->kode_pos ?> <br>
-										Ekstra : <?= number_format($value->ongkir, 0) ?><br>
+										Ongkir : <?= number_format($value->ongkir, 0) ?><br>
 										Nomor HP : <?= $value->hp_penerima ?>
 									</td>
 									<td>
@@ -172,23 +174,24 @@
 								<th>Tanggal</th>
 								<th>Alamat</th>
 								<th>Total Bayar</th>
-								<th>keterangan</th>
+								<th>Resi</th>
 
 							</tr>
 							<?php foreach ($selesai as $key => $value) {
-								if ($value->jarak == "jauh") {
-									$jarak = "20-35 Km";
-								} elseif ($value->jarak == "dekat") {
-									$jarak = "0-20 Km";
-								} ?>
+								// if ($value->jarak == "jauh") {
+								// 	$jarak = "20-35 Km";
+								// } elseif ($value->jarak == "dekat") {
+								// 	$jarak = "0-20 Km";
+								// } ?>
 								<tr>
 									<td><?= $value->no_order ?></td>
 									<td><?= $value->tgl_order ?></td>
 									<td>
-										<b><?= $jarak ?></b><br>
-										Alamat : <?= $value->alamat ?><br>
+										<!-- <b><?= $jarak ?></b><br> -->
+										Alamat :
+										<?= $value->alamat ?><br>
 										Kota : <?= $value->provinsi ?>,<?= $value->kota ?>,<?= $value->kode_pos ?> <br>
-										Ekstra : <?= number_format($value->ongkir, 0) ?><br>
+										Ongkir : <?= number_format($value->ongkir, 0) ?><br>
 										Nomor HP : <?= $value->hp_penerima ?>
 									</td>
 									<td>

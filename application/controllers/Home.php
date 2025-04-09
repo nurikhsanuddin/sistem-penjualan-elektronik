@@ -36,7 +36,7 @@ class Home extends CI_Controller
 	{
 		$kategori = $this->m_home->kategori($id_kategori);
 		$data = array(
-			'title' => 'Kategori mutu : ' . $kategori->nama_kategori,
+			'title' => 'Kategori Barang : ' . $kategori->nama_kategori,
 			'barang' => $this->m_home->get_all_data_barang($id_kategori),
 			'kategori' => $kategori,
 			'isi' => 'v_kategori_barang',

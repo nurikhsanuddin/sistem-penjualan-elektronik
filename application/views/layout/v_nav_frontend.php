@@ -16,9 +16,9 @@
 			<!-- Left navbar links -->
 			<a href="<?= base_url() ?>" class="navbar-brand d-flex align-items-center">
 				<span class="brand-logo bg-primary text-white rounded-circle p-2 mr-2">
-					<i class="fas fa-building"></i>
+					<i class="fas fa-plug"></i>
 				</span>
-				<span class="font-weight-bold">SCS</span>
+				<span class="font-weight-bold">SENDANG MULYA</span>
 			</a>
 
 			<ul class="navbar-nav mr-auto">
@@ -60,7 +60,7 @@
 			<ul class="navbar-nav ml-3">
 				<li class="nav-item mr-2">
 					<?php if ($this->session->userdata('email') == "") { ?>
-						<a class="btn btn-sm btn-outline-primary" href="<?= base_url('pelanggan/login') ?>">
+						<a class="btn btn-sm btn-outline-primary mt-2" href="<?= base_url('pelanggan/login') ?>">
 							<i class="fas fa-user mr-1"></i> Login/Register
 						</a>
 					<?php } else { ?>
@@ -167,11 +167,11 @@
 			<div class="modal-body">
 				<div class="d-flex align-items-center mb-3">
 					<i class="fab fa-whatsapp fa-2x text-success mr-3"></i>
-					<p class="mb-0">085156815391</p>
+					<p class="mb-0">081234567890</p>
 				</div>
 				<div class="d-flex align-items-center">
 					<i class="far fa-envelope fa-2x text-primary mr-3"></i>
-					<p class="mb-0">admin@projectmaster.cloud</p>
+					<p class="mb-0">info@sendangmulya.com</p>
 				</div>
 			</div>
 			<div class="modal-footer">

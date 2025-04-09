@@ -1,10 +1,11 @@
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header">
-			<h3 class="card-title">Data mutu</h3>
+			<h3 class="card-title">Data Barang</h3>
 
 			<div class="card-tools">
-				<a href="<?= base_url('barang/add') ?>" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add</a>
+				<a href="<?= base_url('barang/add') ?>" type="button" class="btn btn-primary btn-sm"><i
+						class="fas fa-plus"></i> Add</a>
 			</div>
 			<!-- /.card-tools -->
 		</div>
@@ -25,7 +26,7 @@
 				<thead class="text-center">
 					<tr>
 						<th>No</th>
-						<th>Nama mutu</th>
+						<th>Nama Barang</th>
 						<th>Kategori</th>
 						<th>Harga</th>
 						<th>Gambar</th>
@@ -44,11 +45,14 @@
 							</td>
 							<td class="text-center"><?= $value->nama_kategori ?></td>
 							<td class="text-center">Rp. <?= number_format($value->harga, 0) ?></td>
-							<td class="text-center"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" width="150px"></td>
+							<td class="text-center"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>"
+									width="150px"></td>
 							<td class="text-center"><?= $value->deskripsi ?></td>
 							<td class="text-center">
-								<a href="<?= base_url('barang/edit/' . $value->id_barang) ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_barang ?>"><i class="fas fa-trash"></i></button>
+								<a href="<?= base_url('barang/edit/' . $value->id_barang) ?>"
+									class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+								<button class="btn btn-danger btn-sm" data-toggle="modal"
+									data-target="#delete<?= $value->id_barang ?>"><i class="fas fa-trash"></i></button>
 							</td>
 						</tr>
 					<?php } ?>

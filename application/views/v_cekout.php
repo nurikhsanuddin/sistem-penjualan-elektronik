@@ -27,7 +27,7 @@
 							<tr>
 								<th>Qty</th>
 								<th width="150px" class="text-center">Harga</th>
-								<th>Mutu</th>
+								<th>Barang</th>
 								<th class="text-center">Total Harga</th>
 							</tr>
 						</thead>

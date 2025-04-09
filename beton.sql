@@ -175,7 +175,7 @@ CREATE TABLE `tbl_setting` (
 --
 
 INSERT INTO `tbl_setting` (`id`, `nama_toko`, `lokasi`, `alamat_toko`, `no_telpon`) VALUES
-(1, 'PT. Surya Cakra Sakti', 419, 'Sleman', '085156815391');
+(1, 'SENDANG MULYA', 419, 'Sleman', '085156815391');
 
 -- --------------------------------------------------------
 

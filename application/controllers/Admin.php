@@ -34,6 +34,9 @@ class Admin extends CI_Controller
 			$this->form_validation->set_rules('nama_toko', 'Nama Toko', 'required', array(
 				'required' => '%s Harus Di isi !!!'
 			));
+			$this->form_validation->set_rules('provinsi', 'Provinsi', 'required', array(
+				'required' => '%s Harus Di isi !!!'
+			));
 			$this->form_validation->set_rules('kota', 'Kota', 'required', array(
 				'required' => '%s Harus Di isi !!!'
 			));
@@ -54,10 +57,11 @@ class Admin extends CI_Controller
 			} else {
 				$data = array(
 					'id' => 1,
-					'lokasi' => $this->input->post('kota'),
+					'lokasi' => $this->input->post('id_kota'),
 					'nama_toko' => $this->input->post('nama_toko'),
 					'alamat_toko' => $this->input->post('alamat_toko'),
 					'no_telpon' => $this->input->post('no_telpon'),
+					'provinsi' => $this->input->post('provinsi'),
 				);
 				$this->m_admin->edit($data);
 				$this->session->set_flashdata('pesan', 'Settingan Berhasil di Ganti !!!');
@@ -73,7 +77,7 @@ class Admin extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Pelanggan',
-			'pelanggan'	=> $this->m_admin->get_all_data(),
+			'pelanggan' => $this->m_admin->get_all_data(),
 			'isi' => 'v_pelanggan',
 		);
 		$this->load->view('layout/v_wrapper_backend', $data, FALSE);

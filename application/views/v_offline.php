@@ -27,7 +27,8 @@
 						<div class="card-body pt-0">
 							<div class="row" style="height: 250px;">
 								<div class="col-12 text-center">
-									<img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" class="img-fluid" style="max-width: 100%; max-height: 250px;">
+									<img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" class="img-fluid"
+										style="max-width: 100%; max-height: 250px;">
 								</div>
 							</div>
 						</div>
@@ -40,7 +41,8 @@
 								</div>
 								<div class="col-sm-6">
 									<div class="text-right">
-										<a href="<?= base_url('home/detail_barang/' . $value->id_barang)  ?>" class="btn btn-sm btn-dark">
+										<a href="<?= base_url('home/detail_barang/' . $value->id_barang) ?>"
+											class="btn btn-sm btn-dark">
 											<i class="fas fa-eye"></i>
 										</a>
 										<button type="submit" class="btn btn-sm btn-success swalDefaultSuccess">
@@ -77,7 +79,7 @@
 
 					<tr>
 						<th width="100px">QTY</th>
-						<th>Nama mutu</th>
+						<th>Nama Barang</th>
 						<th style="text-align:right">Harga</th>
 						<th style="text-align:right">Sub-Total</th>
 						<th style="text-align:center">Berat</th>
@@ -93,7 +95,7 @@
 						$berat = $items['qty'] * $barang->berat;
 
 						$tot_berat = $tot_berat + $berat;
-					?>
+						?>
 						<tr>
 							<td>
 								<?php
@@ -110,10 +112,11 @@
 							</td>
 							<td><?php echo $items['name']; ?></td>
 							<td style="text-align:right">Rp. <?php echo number_format($items['price'], 0); ?></td>
-							<td style="text-align:right">Rp. <?php echo  number_format($items['subtotal'], 0); ?></td>
-							<td class="text-center"><?= $berat  ?> Gr</td>
+							<td style="text-align:right">Rp. <?php echo number_format($items['subtotal'], 0); ?></td>
+							<td class="text-center"><?= $berat ?> Gr</td>
 							<td class="text-center">
-								<a href="<?= base_url('offline/delete/' . $items['rowid']) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+								<a href="<?= base_url('offline/delete/' . $items['rowid']) ?>"
+									class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 
@@ -137,8 +140,10 @@
 				</table>
 
 				<button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-save"></i> Update Cart</button>
-				<a href="<?= base_url('offline/clear') ?>" class="btn btn-danger btn-flat"><i class="fa fa-recycle"></i> Clear Cart</a>
-				<a href="<?= base_url('offline/cekout')  ?>" class="btn btn-success btn-flat"><i class="fa fa-check-square"></i> Check Out</a>
+				<a href="<?= base_url('offline/clear') ?>" class="btn btn-danger btn-flat"><i class="fa fa-recycle"></i>
+					Clear Cart</a>
+				<a href="<?= base_url('offline/cekout') ?>" class="btn btn-success btn-flat"><i
+						class="fa fa-check-square"></i> Check Out</a>
 				<?php echo form_close(); ?>
 				<br>
 
@@ -150,7 +155,7 @@
 
 <script src="<?= base_url() ?>template/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script type="text/javascript">
-	$(function() {
+	$(function () {
 		const Toast = Swal.mixin({
 			toast: true,
 			position: 'top-end',
@@ -158,7 +163,7 @@
 			timer: 8000
 		});
 
-		$('.swalDefaultSuccess').click(function() {
+		$('.swalDefaultSuccess').click(function () {
 			Toast.fire({
 				icon: 'success',
 				title: 'Barang Berhasil Ditambahkan Ke Keranjang !!!'

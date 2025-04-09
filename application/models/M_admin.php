@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_admin extends CI_Model
 {
-	// count total barang/mutu
+	// count total barang/Barang
 	public function total_barang()
 	{
 		return $this->db->get('tbl_barang')->num_rows();
