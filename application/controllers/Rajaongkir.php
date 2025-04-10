@@ -13,43 +13,62 @@ class Rajaongkir extends CI_Controller
 		$this->load->model('m_setting');
 		$this->load->driver('cache', array('adapter' => 'file'));
 
-		// Set API key in constructor
-		$this->api_key = $_ENV['RAJAONGKIR_API_KEY'];
+		// Set API key with fallback and error handling
+		$this->api_key = $this->get_api_key();
+	}
+
+	private function get_api_key()
+	{
+		// Try multiple ways to get API key
+		$key = getenv('RAJAONGKIR_API_KEY'); // Try getenv first
+		if (!$key) {
+			$key = isset($_ENV['RAJAONGKIR_API_KEY']) ? $_ENV['RAJAONGKIR_API_KEY'] : null; // Try $_ENV
+		}
+
+		return $key;
 	}
 
 	public function provinsi()
 	{
+		try {
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+				CURLOPT_SSL_VERIFYHOST => 0,
+				CURLOPT_SSL_VERIFYPEER => 0,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => "",
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 30,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => "GET",
+				CURLOPT_HTTPHEADER => array(
+					"key: " . $this->api_key
+				),
+			));
 
-		$curl = curl_init();
-		curl_setopt_array($curl, array(
-			CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
-			CURLOPT_SSL_VERIFYHOST => 0,
-			CURLOPT_SSL_VERIFYPEER => 0,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => "",
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 30,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => "GET",
-			CURLOPT_HTTPHEADER => array(
-				"key: $this->api_key"
-			),
-		));
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+			curl_close($curl);
 
-		curl_close($curl);
+			if ($err) {
+				throw new Exception("cURL Error: " . $err);
+			}
 
-		if ($err) {
-			echo "cURL Error #:" . $err;
-		} else {
 			$array_response = json_decode($response, true);
+			if (!isset($array_response['rajaongkir']['results'])) {
+				throw new Exception("Invalid API response: " . $response);
+			}
+
 			$data_provinsi = $array_response['rajaongkir']['results'];
 			echo "<option value=''>--Pilih Provinsi--</option>";
 			foreach ($data_provinsi as $key => $value) {
 				echo "<option value='" . $value['province'] . "' id_provinsi='" . $value['province_id'] . "'>" . $value['province'] . "</option>";
 			}
+		} catch (Exception $e) {
+			log_message('error', 'Rajaongkir API Error: ' . $e->getMessage());
+			echo "<option value=''>Error loading provinces</option>";
 		}
 	}
 
