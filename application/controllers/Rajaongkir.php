@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Rajaongkir extends CI_Controller
 {
-	private $api_key = '8216fe1b74904082d8c078bfb52cca0a';
+	private $api_key;
 
 	public function __construct()
 	{
@@ -12,10 +12,14 @@ class Rajaongkir extends CI_Controller
 		$this->load->model('m_admin');
 		$this->load->model('m_setting');
 		$this->load->driver('cache', array('adapter' => 'file'));
+
+		// Set API key in constructor
+		$this->api_key = $_ENV['RAJAONGKIR_API_KEY'];
 	}
 
 	public function provinsi()
 	{
+
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => "https://api.rajaongkir.com/starter/province",

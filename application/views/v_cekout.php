@@ -21,6 +21,7 @@
 				<div class="card-header bg-primary text-white">
 					<h5 class="mb-0">Daftar Pesanan</h5>
 				</div>
+
 				<div class="card-body p-0">
 					<table class="table table-hover">
 						<thead>
@@ -40,7 +41,7 @@
 								$berat = $items['qty'] * $barang->berat;
 
 								$tot_berat = $tot_berat + $berat;
-								?>
+							?>
 								<tr>
 									<td class="align-middle"><?php echo $items['qty']; ?></td>
 									<td class="text-center align-middle">Rp.
@@ -207,12 +208,11 @@
 
 <!-- Add Select2 CSS and JS if not already included in your template -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css"
-	rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
-	$(document).ready(function () {
+	$(document).ready(function() {
 		// Make sure select2 is loaded before initializing
 		if ($.fn.select2) {
 			// Initialize select2
@@ -229,10 +229,10 @@
 			type: "POST",
 			url: "<?= base_url('rajaongkir/provinsi') ?>",
 			dataType: "html",
-			success: function (hasil_provinsi) {
+			success: function(hasil_provinsi) {
 				$("select[name=provinsi]").html(hasil_provinsi);
 			},
-			error: function (xhr, status, error) {
+			error: function(xhr, status, error) {
 				console.error("Error loading provinces:", error);
 				$("select[name=provinsi]").html("<option value=''>Error loading provinces</option>");
 			}
@@ -243,30 +243,30 @@
 			type: "POST",
 			url: "<?= base_url('rajaongkir/expedisi') ?>",
 			dataType: "html",
-			success: function (hasil_expedisi) {
+			success: function(hasil_expedisi) {
 				$("select[name=expedisi]").html(hasil_expedisi);
 			},
-			error: function (xhr, status, error) {
+			error: function(xhr, status, error) {
 				console.error("Error loading expedisi:", error);
 				$("select[name=expedisi]").html("<option value=''>Error loading expedisi</option>");
 			}
 		});
 
 		// Fetch city data on province selection
-		$("select[name=provinsi]").on("change", function () {
+		$("select[name=provinsi]").on("change", function() {
 			var id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
 			$.ajax({
 				type: "POST",
 				url: "<?= base_url('rajaongkir/kota') ?>",
 				data: 'id_provinsi=' + id_provinsi_terpilih,
 				dataType: "html",
-				beforeSend: function () {
+				beforeSend: function() {
 					$("select[name=kota]").html("<option value=''>Loading...</option>");
 				},
-				success: function (hasil_kota) {
+				success: function(hasil_kota) {
 					$("select[name=kota]").html(hasil_kota);
 				},
-				error: function (xhr, status, error) {
+				error: function(xhr, status, error) {
 					console.error("Error loading cities:", error);
 					$("select[name=kota]").html("<option value=''>Error loading cities</option>");
 				}
@@ -274,11 +274,11 @@
 		});
 
 		// Fetch shipping cost on city and expedition selection
-		$("select[name=kota]").on("change", function () {
+		$("select[name=kota]").on("change", function() {
 			getShippingCost();
 		});
 
-		$("select[name=expedisi]").on("change", function () {
+		$("select[name=expedisi]").on("change", function() {
 			getShippingCost();
 		});
 
@@ -299,13 +299,13 @@
 						expedisi: expedisi
 					},
 					dataType: "html",
-					beforeSend: function () {
+					beforeSend: function() {
 						$("select[name=paket]").html("<option value=''>Loading...</option>");
 					},
-					success: function (hasil_paket) {
+					success: function(hasil_paket) {
 						$("select[name=paket]").html(hasil_paket);
 					},
-					error: function (xhr, status, error) {
+					error: function(xhr, status, error) {
 						console.error("Error loading packages:", error);
 						$("select[name=paket]").html("<option value=''>Error loading packages</option>");
 					}
@@ -314,7 +314,7 @@
 		}
 
 		// Calculate total payment on shipping package selection
-		$("select[name=paket]").on("change", function () {
+		$("select[name=paket]").on("change", function() {
 			// Get shipping cost and estimated time
 			var ongkir = $("option:selected", this).attr("data-ongkir");
 			var estimasi = $("option:selected", this).attr("data-estimasi");
